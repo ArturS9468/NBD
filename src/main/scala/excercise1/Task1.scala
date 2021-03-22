@@ -25,15 +25,21 @@ object Task1 extends App {
     }
   }
   println("Podpunkt b: " +forStringWithPOnly)
-
   var iterator = 0
   var whileString = ""
+
 
   while(iterator < daysOfWeek.size){
     whileString = whileString + daysOfWeek(iterator) + ", "
     iterator = iterator + 1
   }
   println("Podpunkt c: " +whileString)
+
+  def addInt( a:Int, b:Int ) : Int = {
+    var sum:Int = 0
+    sum = a + b
+    sum
+  }
 
 }
 
