@@ -1,5 +1,5 @@
 package org.nbd.com
-package excercise1
+package exercise1
 
 object Task1 {
 
@@ -24,6 +24,7 @@ object Task1 {
     forString
   }
 
+  //if w forze
   def podpunktB(): String = {
     var forStringWithPOnly = ""
     for (day <- daysOfWeek if "P".equals(day.substring(0,1))) {

@@ -1,5 +1,5 @@
 package org.nbd.com
-package excercise1
+package exercise1
 
 object Task5 {
 

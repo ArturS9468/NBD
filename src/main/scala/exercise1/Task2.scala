@@ -1,10 +1,12 @@
 package org.nbd.com
-package excercise1
+package exercise1
 
 object Task2 {
 
   val daysOfWeek: List[String] = List("Poniedzialek", "Wtorek", "Sroda", "Czwartek", "Piatek", "Sobota", "Niedziela")
 
+
+  //rekurencja z lista w argumencie
   def podpunktA2(list: List[String]): String = {
     list match {
       case Nil => ""
