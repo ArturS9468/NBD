@@ -12,11 +12,6 @@ object Task4 {
 
   def multiplyBySelf(x: Int) = x * x
 
-  def multiplyBySelfTriple(method: (Int) => Int, value: Int) : Int = {
-    var result = method(value)
-    result = method(result)
-    result = method(result)
-    result
-  }
+  def multiplyBySelfTriple(method: (Int) => Int, value: Int) : Int = method(method(method(value)))
 
 }

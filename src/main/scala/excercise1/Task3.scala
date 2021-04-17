@@ -7,20 +7,20 @@ object Task3 {
 
   val daysOfWeek: List[String] = List("Poniedzialek", "Wtorek", "Sroda", "Czwartek", "Piatek", "Sobota", "Niedziela")
 
-  def ogonowa(n: Int): String =
+  def ogonowa2(list: List[String]): String =
   {
-    @tailrec def ogonowaAcc(acc: String, n: Int): String =
+    @tailrec def ogonowaAcc2(acumulator: String, list: List[String]): String =
     {
-      if (n == daysOfWeek.size)
-        acc
-      else
-        ogonowaAcc(acc + ", " + daysOfWeek(n), n + 1)
+      list match {
+        case Nil => acumulator
+        case x :: tail => ogonowaAcc2(acumulator + x + ", " , tail)
+      }
     }
-    ogonowaAcc(daysOfWeek(n-1), n)
+    ogonowaAcc2("", list)
   }
 
   def main(args: Array[String]) {
-    println("Funkcja rekurencyjna ogonowa: " + ogonowa(1))
+    println("Funkcja rekurencyjna ogonowa: " + ogonowa2(daysOfWeek))
   }
 
 }

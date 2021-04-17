@@ -16,18 +16,9 @@ object Task5 {
   }
 
   def main(args: Array[String]): Unit = {
-    val newValues = products.values.map(square).toList
-    val newKeys = products.keys.toList
-    var newMap = Map.empty[String, Double]
-
-    for( i <- newKeys.indices)
-    {
-      newMap += (newKeys(i) -> newValues(i))
-    }
-
+    val newMapV2 = products.mapValues(square).toList
     println("Old map: " + products)
-    println("New map: " + newMap)
-
+    println("New map v2: " + newMapV2)
   }
 
 }

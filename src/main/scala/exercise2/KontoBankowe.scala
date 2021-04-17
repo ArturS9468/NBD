@@ -1,10 +1,13 @@
 package org.nbd.com
 package exercise2
 
-class KontoBankowe (private var stanKonta: Double) {
+class KontoBankowe {
 
-  def this() {
-    this(0);
+  private var stanKonta: Double = 0
+
+  def this(stan: Double) {
+    this()
+    stanKonta = stan
   }
 
   def wplata(kwota: Double): Unit = {

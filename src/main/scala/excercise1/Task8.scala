@@ -17,7 +17,6 @@ object Task8 {
   }
 
   def main(args: Array[String]) {
-    println("asd" :: "dwa2" :: Nil)
     println(numbers)
     print(remove(numbers))
   }

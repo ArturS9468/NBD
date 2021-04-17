@@ -16,14 +16,19 @@ object Task4 {
 
   def foldlWithP(): String =
   {
-    daysOfWeek.foldLeft("")((m,n) =>
+    //na liscie najpierw filtr, potem fold
+    daysOfWeek.filter(day=>"p".equalsIgnoreCase(day.substring(0,1))).foldLeft("")((m,n) => m + n + ", ")
+
+
+    //po staremu
+/*    daysOfWeek.foldLeft("")((m,n) =>
     {
       if("p".equalsIgnoreCase(n.substring(0,1))){
         m + n + ", "
       } else {
         m
       }
-    })
+    })*/
   }
 
   def main(args: Array[String]) {

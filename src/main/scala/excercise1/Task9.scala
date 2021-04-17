@@ -5,13 +5,13 @@ object Task9 {
 
   val numbers: List[Int] = List(1, 2, 0, 3, 4, 0, 5, 6, 0, 7, 8, 0, 9, 0)
 
-  def square(a:Int):Int =
+  def increasyByOne(a:Int):Int =
   {
     a+1
   }
 
   def increaseValues(list : List[Int]) : List[Int] = {
-    list.map(square)
+    list.map(increasyByOne)
   }
 
   def main(args: Array[String]): Unit = {

@@ -1,8 +1,7 @@
 package org.nbd.com
 package exercise2
 
-class Osoba2 (val imie: String, val nazwisko: String, val podatek: Double){
-
+abstract class Osoba2 (val imie: String, val nazwisko: String){
 
   def getImie(): String = {
     imie
@@ -12,8 +11,5 @@ class Osoba2 (val imie: String, val nazwisko: String, val podatek: Double){
     nazwisko
   }
 
-  def getPodatek(): Double = {
-    podatek
-  }
-
+  def getPodatek() : Double
 }

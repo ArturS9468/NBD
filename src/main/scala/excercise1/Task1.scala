@@ -1,44 +1,46 @@
 package org.nbd.com
 package excercise1
 
-object Task1 extends App {
-  println("Hello, World!")
+object Task1 {
 
   val daysOfWeek: List[String] = List("Poniedzialek", "Wtorek", "Sroda", "Czwartek", "Piatek", "Sobota", "Niedziela")
 
-  var forString = ""
+  def main(args: Array[String]) {
+    println("Pudpunkt a: " + podpunktA())
+    println("Pudpunkt b: " + podpunktB())
+    println("Pudpunkt c: " + podpunktC())
+  }
 
-  for (day <- daysOfWeek) {
-    if ("Niedziela".equals(day)) {
-      forString = forString + day
-    } else {
-      forString = forString + day + ", "
+  def podpunktA(): String = {
+    var forString = ""
+
+    for (day <- daysOfWeek) {
+      if ("Niedziela".equals(day)) {
+        forString = forString + day
+      } else {
+        forString = forString + day + ", "
+      }
     }
+    forString
   }
-  println("Podpunkt a: " + forString)
 
-  var forStringWithPOnly = ""
-
-  for (day <- daysOfWeek) {
-    if ("P".equals(day.substring(0,1))) {
-      forStringWithPOnly = forStringWithPOnly + day + ", "
+  def podpunktB(): String = {
+    var forStringWithPOnly = ""
+    for (day <- daysOfWeek if "P".equals(day.substring(0,1))) {
+        forStringWithPOnly = forStringWithPOnly + day + ", "
     }
+    forStringWithPOnly
   }
-  println("Podpunkt b: " +forStringWithPOnly)
-  var iterator = 0
-  var whileString = ""
 
+  def podpunktC(): String = {
+    var iterator = 0
+    var whileString = ""
 
-  while(iterator < daysOfWeek.size){
-    whileString = whileString + daysOfWeek(iterator) + ", "
-    iterator = iterator + 1
-  }
-  println("Podpunkt c: " +whileString)
-
-  def addInt( a:Int, b:Int ) : Int = {
-    var sum:Int = 0
-    sum = a + b
-    sum
+    while(iterator < daysOfWeek.size){
+      whileString = whileString + daysOfWeek(iterator) + ", "
+      iterator = iterator + 1
+    }
+    whileString
   }
 
 }
