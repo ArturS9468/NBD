@@ -1,0 +1,4 @@
+{ "result" : "map_reduce_weights", "ok" : 1 }
+
+{ "_id" : "Male", "value" : { "avgWeight" : 70.01344841510199, "avgHeight" : 166.73765596608132 } }
+{ "_id" : "Female", "value" : { "avgWeight" : 70.11331573604069, "avgHeight" : 166.8126091370557 } }

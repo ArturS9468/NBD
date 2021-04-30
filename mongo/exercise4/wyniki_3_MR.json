@@ -1,0 +1,22 @@
+{ "result" : "map_reduce_jobs", "ok" : 1 }
+
+{ "_id" : "Social Worker", "value" : 88 }
+{ "_id" : "Computer Systems Analyst III", "value" : 14 }
+{ "_id" : "Product Engineer", "value" : 94 }
+{ "_id" : "Executive Secretary", "value" : 87 }
+{ "_id" : "Account Representative III", "value" : 24 }
+{ "_id" : "Engineer I", "value" : 19 }
+{ "_id" : "Health Coach III", "value" : 20 }
+{ "_id" : "Engineer II", "value" : 19 }
+{ "_id" : "Director of Sales", "value" : 81 }
+{ "_id" : "Programmer I", "value" : 21 }
+{ "_id" : "Geologist I", "value" : 26 }
+{ "_id" : "Physical Therapy Assistant", "value" : 92 }
+{ "_id" : "Analog Circuit Design manager", "value" : 79 }
+{ "_id" : "Software Engineer III", "value" : 27 }
+{ "_id" : "Media Manager IV", "value" : 21 }
+{ "_id" : "Safety Technician II", "value" : 25 }
+{ "_id" : "Software Engineer II", "value" : 29 }
+{ "_id" : "Senior Sales Associate", "value" : 84 }
+{ "_id" : "Cost Accountant", "value" : 78 }
+{ "_id" : "Environmental Specialist", "value" : 73 }
