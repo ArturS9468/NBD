@@ -1,4 +1,4 @@
-{ "result" : "map_reduce_weights", "ok" : 1 }
+{ "result" : "map_reduce_weights_new", "ok" : 1 }
 
-{ "_id" : "Male", "value" : { "avgWeight" : 70.01344841510199, "avgHeight" : 166.73765596608132 } }
-{ "_id" : "Female", "value" : { "avgWeight" : 70.11331573604069, "avgHeight" : 166.8126091370557 } }
+{ "_id" : "Male", "value" : { "count" : 4953, "weight" : 346776.61000000016, "height" : 825851.6100000008, "avgHeight" : 166.73765596608132, "avgWeight" : 70.01344841510199 } }
+{ "_id" : "Female", "value" : { "count" : 4925, "weight" : 345308.0800000004, "height" : 821552.0999999993, "avgHeight" : 166.8126091370557, "avgWeight" : 70.11331573604069 } }

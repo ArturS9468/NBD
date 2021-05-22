@@ -18,3 +18,5 @@ db.people.mapReduce(
 )
 
 db.money_in_account.find()
+
+//ok

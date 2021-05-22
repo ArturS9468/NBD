@@ -10,3 +10,5 @@ groupStage = {
 db.people.aggregate([
   groupStage
 ])
+
+//ok

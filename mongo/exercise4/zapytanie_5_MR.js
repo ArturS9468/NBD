@@ -1,14 +1,26 @@
 var mapFunction = function() {
+
     for (var idx = 0; idx < this.credit.length; idx++) {
        var key = this.credit[idx].currency;
-       var value = parseFloat(this.credit[idx].balance);
+       var value = { count: 1, balance: parseFloat(this.credit[idx].balance) };
        emit(key, value);
     }
 };
 
+var reduceFunction = function(currency, objects) {
+   reducedVal = { count: 0, balance: 0 };
 
-var reduceFunction = function(currencies, balances) {
-    return {avg : Array.avg(balances), sum : Array.sum(balances)};
+   for (var idx = 0; idx < objects.length; idx++) {
+       reducedVal.count += objects[idx].count;
+       reducedVal.balance += objects[idx].balance;
+   }
+   return reducedVal;
+};
+
+
+var finalizeFunction = function (sexes, reducedObject) {
+  reducedObject.avgBalance = reducedObject.balance/reducedObject.count;
+  return reducedObject;
 };
 
 db.people.mapReduce(
@@ -17,6 +29,7 @@ db.people.mapReduce(
    {
     out: "money_in_polish_women_account",
     query: { sex: "Female", nationality: "Poland" },
+    finalize: finalizeFunction,
    }
 )
 

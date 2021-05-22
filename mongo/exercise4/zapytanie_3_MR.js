@@ -15,3 +15,5 @@ db.people.mapReduce(
  )
 
 db.map_reduce_jobs.find()
+
+//ok

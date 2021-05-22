@@ -1,0 +1,38 @@
+1) MATCH (movies:Movie) RETURN movies
+2) MATCH (hugo:Person {name: "Hugo Weaving"})-[:ACTED_IN]->(hugoWMovies) RETURN hugo,hugoWMovies
+3) MATCH (hugo:Person {name:"Hugo Weaving"})-[:ACTED_IN]->(m)<-[:DIRECTED]-(directors) RETURN DISTINCT directors
+4) MATCH (hugo:Person {name:"Hugo Weaving"})-[:ACTED_IN]->(m)<-[:ACTED_IN]-(coActors) RETURN coActors
+5) MATCH (matrix:Movie {title:'The Matrix'})<-[:ACTED_IN]-(actors) RETURN actors
+6) MATCH (movies:Movie)<-[:ACTED_IN]-(actors) RETURN actors, count(*)
+7) MATCH (p:Person)-[:ACTED_IN]->(m)<-[:DIRECTED]-(p) RETURN p
+8) MATCH (hugo:Person {name:"Hugo Weaving"})-[:ACTED_IN]->(m)<-[:ACTED_IN]-(keanu:Person {name:"Keanu Reeves"}) RETURN m
+
+9.1)
+CREATE (CaptainAmerica:Movie {title:'Captain America: The First Avenger', released:2011})
+CREATE (JoeJohnston:Person {name:'Joe Johnston', born:1964})
+CREATE (ChristopherMarkus:Person {name:'Christopher Markus', born:1964})
+CREATE (StephenMcFeely:Person {name:'Stephen McFeely', born:1964})
+CREATE (ChrisEvans:Person {name:'Chris Evans', born:1964})
+CREATE (SamuelJackson:Person {name:'Samuel L. Jackson', born:1964})
+
+MATCH (Hugo:Person {name: "Hugo Weaving"})
+
+CREATE (CaptainAmerica:Movie {title:'Captain America: The First Avenger', released:2011})
+CREATE (JoeJohnston:Person {name:'Joe Johnston', born:1964})
+CREATE (ChristopherMarkus:Person {name:'Christopher Markus', born:1964})
+CREATE (StephenMcFeely:Person {name:'Stephen McFeely', born:1964})
+CREATE (ChrisEvans:Person {name:'Chris Evans', born:1964})
+CREATE (SamuelJackson:Person {name:'Samuel L. Jackson', born:1964})
+
+CREATE
+(JoeJohnston)-[:DIRECTED]->(CaptainAmerica),
+(ChristopherMarkus)-[:WROTE]->(CaptainAmerica),
+(StephenMcFeely)-[:WROTE]->(CaptainAmerica),
+(Hugo)-[:ACTED_IN {roles:['Red Skull']}]->(CaptainAmerica),
+(ChrisEvans)-[:ACTED_IN {roles:['Captain America']}]->(CaptainAmerica),
+(SamuelJackson)-[:ACTED_IN {roles:['Nick Fury']}]->(CaptainAmerica)
+
+9.2) MATCH (people:Person)-[relatedTo]-(m:Movie {title: "Captain America: The First Avenger"}) RETURN m, people, Type(relatedTo), relatedTo
+
+
+//ok

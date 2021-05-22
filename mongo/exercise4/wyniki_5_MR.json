@@ -1,22 +1,75 @@
 { "result" : "money_in_polish_women_account", "ok" : 1 }
 
-{ "_id" : "VND", "value" : { "avg" : 4520.032499999999, "sum" : 36160.259999999995 } }
-{ "_id" : "PLN", "value" : { "avg" : 5042.82111111111, "sum" : 90770.77999999998 } }
-{ "_id" : "GTQ", "value" : { "avg" : 5806.3, "sum" : 5806.3 } }
-{ "_id" : "CZK", "value" : { "avg" : 4644.552500000001, "sum" : 37156.420000000006 } }
-{ "_id" : "YER", "value" : { "avg" : 4570.833333333333, "sum" : 13712.5 } }
-{ "_id" : "NGN", "value" : { "avg" : 4157.705, "sum" : 24946.23 } }
-{ "_id" : "XAF", "value" : { "avg" : 4698.22, "sum" : 14094.660000000002 } }
-{ "_id" : "RSD", "value" : { "avg" : 4276.56, "sum" : 4276.56 } }
-{ "_id" : "ALL", "value" : { "avg" : 3325.48, "sum" : 3325.48 } }
-{ "_id" : "USD", "value" : { "avg" : 4978.732000000001, "sum" : 74680.98000000001 } }
-{ "_id" : "ARS", "value" : { "avg" : 4648.4, "sum" : 23242 } }
-{ "_id" : "PYG", "value" : { "avg" : 4874.69, "sum" : 4874.69 } }
-{ "_id" : "COP", "value" : { "avg" : 4936.6825, "sum" : 19746.73 } }
-{ "_id" : "IDR", "value" : { "avg" : 4907.918030303031, "sum" : 323922.59 } }
-{ "_id" : "LYD", "value" : { "avg" : 4382.495, "sum" : 8764.99 } }
-{ "_id" : "NOK", "value" : { "avg" : 4773.66, "sum" : 4773.66 } }
-{ "_id" : "BRL", "value" : { "avg" : 4512.001818181819, "sum" : 49632.020000000004 } }
-{ "_id" : "NZD", "value" : { "avg" : 5328.46, "sum" : 5328.46 } }
-{ "_id" : "BYR", "value" : { "avg" : 5095.79, "sum" : 5095.79 } }
-{ "_id" : "IQD", "value" : { "avg" : 4269.39, "sum" : 4269.39 } }
+{ "_id" : "IQD", "value" : { "count" : 1, "balance" : 4269.39, "avgBalance" : 4269.39 } }
+{ "_id" : "CAD", "value" : { "count" : 11, "balance" : 58375.6, "avgBalance" : 5306.872727272727 } }
+{ "_id" : "USD", "value" : { "count" : 15, "balance" : 74680.98000000001, "avgBalance" : 4978.732000000001 } }
+{ "_id" : "ALL", "value" : { "count" : 1, "balance" : 3325.48, "avgBalance" : 3325.48 } }
+{ "_id" : "VEF", "value" : { "count" : 2, "balance" : 8333.28, "avgBalance" : 4166.64 } }
+{ "_id" : "HNL", "value" : { "count" : 3, "balance" : 16514.59, "avgBalance" : 5504.863333333334 } }
+{ "_id" : "BYR", "value" : { "count" : 1, "balance" : 5095.79, "avgBalance" : 5095.79 } }
+{ "_id" : "MXN", "value" : { "count" : 10, "balance" : 50228.99999999999, "avgBalance" : 5022.9 } }
+{ "_id" : "SEK", "value" : { "count" : 14, "balance" : 70840.19, "avgBalance" : 5060.013571428572 } }
+{ "_id" : "GBP", "value" : { "count" : 1, "balance" : 6149.19, "avgBalance" : 6149.19 } }
+{ "_id" : "MWK", "value" : { "count" : 1, "balance" : 3574.42, "avgBalance" : 3574.42 } }
+{ "_id" : "XAF", "value" : { "count" : 3, "balance" : 14094.660000000002, "avgBalance" : 4698.22 } }
+{ "_id" : "BOB", "value" : { "count" : 1, "balance" : 5263.3, "avgBalance" : 5263.3 } }
+{ "_id" : "GTQ", "value" : { "count" : 1, "balance" : 5806.3, "avgBalance" : 5806.3 } }
+{ "_id" : "ISK", "value" : { "count" : 1, "balance" : 4316.41, "avgBalance" : 4316.41 } }
+{ "_id" : "THB", "value" : { "count" : 5, "balance" : 23021.96, "avgBalance" : 4604.392 } }
+{ "_id" : "CDF", "value" : { "count" : 2, "balance" : 12228.8, "avgBalance" : 6114.4 } }
+{ "_id" : "MNT", "value" : { "count" : 4, "balance" : 21715.61, "avgBalance" : 5428.9025 } }
+{ "_id" : "PHP", "value" : { "count" : 24, "balance" : 118606.27999999998, "avgBalance" : 4941.928333333332 } }
+{ "_id" : "ZMW", "value" : { "count" : 1, "balance" : 5569.56, "avgBalance" : 5569.56 } }
+{ "_id" : "ETB", "value" : { "count" : 1, "balance" : 5436.11, "avgBalance" : 5436.11 } }
+{ "_id" : "VND", "value" : { "count" : 8, "balance" : 36160.259999999995, "avgBalance" : 4520.032499999999 } }
+{ "_id" : "BWP", "value" : { "count" : 1, "balance" : 4076.29, "avgBalance" : 4076.29 } }
+{ "_id" : "RWF", "value" : { "count" : 1, "balance" : 4632.88, "avgBalance" : 4632.88 } }
+{ "_id" : "AMD", "value" : { "count" : 5, "balance" : 24609.33, "avgBalance" : 4921.866 } }
+{ "_id" : "NPR", "value" : { "count" : 1, "balance" : 5792.26, "avgBalance" : 5792.26 } }
+{ "_id" : "KZT", "value" : { "count" : 1, "balance" : 3788.95, "avgBalance" : 3788.95 } }
+{ "_id" : "JPY", "value" : { "count" : 12, "balance" : 60944.74, "avgBalance" : 5078.7283333333335 } }
+{ "_id" : "NIO", "value" : { "count" : 2, "balance" : 9971.28, "avgBalance" : 4985.64 } }
+{ "_id" : "CNY", "value" : { "count" : 95, "balance" : 470700.38000000006, "avgBalance" : 4954.740842105264 } }
+{ "_id" : "MMK", "value" : { "count" : 1, "balance" : 4629.42, "avgBalance" : 4629.42 } }
+{ "_id" : "MYR", "value" : { "count" : 1, "balance" : 4781.12, "avgBalance" : 4781.12 } }
+{ "_id" : "PKR", "value" : { "count" : 4, "balance" : 18938, "avgBalance" : 4734.5 } }
+{ "_id" : "HRK", "value" : { "count" : 5, "balance" : 24354.82, "avgBalance" : 4870.964 } }
+{ "_id" : "KRW", "value" : { "count" : 2, "balance" : 13379.82, "avgBalance" : 6689.91 } }
+{ "_id" : "IRR", "value" : { "count" : 6, "balance" : 26504.24, "avgBalance" : 4417.373333333334 } }
+{ "_id" : "ZWL", "value" : { "count" : 1, "balance" : 5792.17, "avgBalance" : 5792.17 } }
+{ "_id" : "PEN", "value" : { "count" : 4, "balance" : 18644.94, "avgBalance" : 4661.235 } }
+{ "_id" : "PYG", "value" : { "count" : 1, "balance" : 4874.69, "avgBalance" : 4874.69 } }
+{ "_id" : "ARS", "value" : { "count" : 5, "balance" : 23242, "avgBalance" : 4648.4 } }
+{ "_id" : "NOK", "value" : { "count" : 1, "balance" : 4773.66, "avgBalance" : 4773.66 } }
+{ "_id" : "IDR", "value" : { "count" : 66, "balance" : 323922.59, "avgBalance" : 4907.918030303031 } }
+{ "_id" : "EUR", "value" : { "count" : 50, "balance" : 245091.46999999994, "avgBalance" : 4901.829399999999 } }
+{ "_id" : "CZK", "value" : { "count" : 8, "balance" : 37156.420000000006, "avgBalance" : 4644.552500000001 } }
+{ "_id" : "COP", "value" : { "count" : 4, "balance" : 19746.73, "avgBalance" : 4936.6825 } }
+{ "_id" : "MKD", "value" : { "count" : 1, "balance" : 3835.05, "avgBalance" : 3835.05 } }
+{ "_id" : "BRL", "value" : { "count" : 11, "balance" : 49632.020000000004, "avgBalance" : 4512.001818181819 } }
+{ "_id" : "UZS", "value" : { "count" : 1, "balance" : 3573.03, "avgBalance" : 3573.03 } }
+{ "_id" : "PLN", "value" : { "count" : 18, "balance" : 90770.77999999998, "avgBalance" : 5042.82111111111 } }
+{ "_id" : "MAD", "value" : { "count" : 1, "balance" : 3818.85, "avgBalance" : 3818.85 } }
+{ "_id" : "BGN", "value" : { "count" : 4, "balance" : 21200.88, "avgBalance" : 5300.22 } }
+{ "_id" : "YER", "value" : { "count" : 3, "balance" : 13712.5, "avgBalance" : 4570.833333333333 } }
+{ "_id" : "NGN", "value" : { "count" : 6, "balance" : 24946.23, "avgBalance" : 4157.705 } }
+{ "_id" : "VUV", "value" : { "count" : 1, "balance" : 6418.27, "avgBalance" : 6418.27 } }
+{ "_id" : "AFN", "value" : { "count" : 3, "balance" : 16755.49, "avgBalance" : 5585.163333333334 } }
+{ "_id" : "EGP", "value" : { "count" : 1, "balance" : 5579.3, "avgBalance" : 5579.3 } }
+{ "_id" : "TZS", "value" : { "count" : 2, "balance" : 7052.370000000001, "avgBalance" : 3526.1850000000004 } }
+{ "_id" : "RSD", "value" : { "count" : 1, "balance" : 4276.56, "avgBalance" : 4276.56 } }
+{ "_id" : "ZAR", "value" : { "count" : 3, "balance" : 11790.92, "avgBalance" : 3930.306666666667 } }
+{ "_id" : "KYD", "value" : { "count" : 1, "balance" : 3760.89, "avgBalance" : 3760.89 } }
+{ "_id" : "RUB", "value" : { "count" : 24, "balance" : 119749.15, "avgBalance" : 4989.547916666666 } }
+{ "_id" : "CUP", "value" : { "count" : 3, "balance" : 15017.34, "avgBalance" : 5005.78 } }
+{ "_id" : "XPF", "value" : { "count" : 1, "balance" : 4759.07, "avgBalance" : 4759.07 } }
+{ "_id" : "SRD", "value" : { "count" : 1, "balance" : 5286.68, "avgBalance" : 5286.68 } }
+{ "_id" : "CLP", "value" : { "count" : 4, "balance" : 21008.95, "avgBalance" : 5252.2375 } }
+{ "_id" : "MGA", "value" : { "count" : 3, "balance" : 14560.99, "avgBalance" : 4853.663333333333 } }
+{ "_id" : "XOF", "value" : { "count" : 3, "balance" : 17882.05, "avgBalance" : 5960.683333333333 } }
+{ "_id" : "NZD", "value" : { "count" : 1, "balance" : 5328.46, "avgBalance" : 5328.46 } }
+{ "_id" : "TJS", "value" : { "count" : 1, "balance" : 4087.71, "avgBalance" : 4087.71 } }
+{ "_id" : "LYD", "value" : { "count" : 2, "balance" : 8764.99, "avgBalance" : 4382.495 } }
+{ "_id" : "DOP", "value" : { "count" : 4, "balance" : 20674.739999999998, "avgBalance" : 5168.6849999999995 } }
+{ "_id" : "ILS", "value" : { "count" : 3, "balance" : 16295.489999999998, "avgBalance" : 5431.829999999999 } }
+{ "_id" : "UAH", "value" : { "count" : 8, "balance" : 40471.840000000004, "avgBalance" : 5058.9800000000005 } }

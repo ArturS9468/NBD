@@ -14,3 +14,7 @@ printjson(db.people.find({
     ]
   }
 }, { first_name: 1, last_name: 1, "location.city": 1, _id: 0} ).toArray())
+
+//mozna na stringach
+//pola sa stringami, mozna na nich porownywac
+// ok

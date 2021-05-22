@@ -28,3 +28,5 @@ db.people.aggregate([
   unwindStage,
   groupStage
 ])
+
+//ok

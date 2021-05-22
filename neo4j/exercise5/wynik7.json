@@ -1,0 +1,38 @@
+﻿[
+  {
+    "p": {
+"identity": 71,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Tom Hanks",
+"born": 1956
+      }
+    }
+  },
+  {
+    "p": {
+"identity": 99,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Clint Eastwood",
+"born": 1930
+      }
+    }
+  },
+  {
+    "p": {
+"identity": 140,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Danny DeVito",
+"born": 1944
+      }
+    }
+  }
+]

@@ -1,0 +1,14 @@
+1.1)
+
+MATCH (Darjeeling:town {name: 'Darjeeling'} ), (Sandakphu:peak {name: 'Sandakphu'}),
+p = shortestPath((Darjeeling)-[*]-(Sandakphu))
+RETURN p
+
+1.2)
+
+MATCH (Darjeeling:town {name: 'Darjeeling'} ), (Sandakphu:peak {name: 'Sandakphu'}),
+p = shortestPath((Darjeeling)-[*]-(Sandakphu))
+WHERE ALL (pw IN relationships(p) WHERE pw.winter = 'true')
+RETURN p
+
+//ok

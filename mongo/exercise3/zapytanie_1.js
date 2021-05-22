@@ -1,1 +1,3 @@
 db.people.findOne()
+
+//ok
