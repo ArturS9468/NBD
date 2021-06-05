@@ -1,14 +1,73 @@
-1.1)
+1)
 
 MATCH (Darjeeling:town {name: 'Darjeeling'} ), (Sandakphu:peak {name: 'Sandakphu'}),
 p = shortestPath((Darjeeling)-[*]-(Sandakphu))
 RETURN p
 
-1.2)
+2)
 
 MATCH (Darjeeling:town {name: 'Darjeeling'} ), (Sandakphu:peak {name: 'Sandakphu'}),
 p = shortestPath((Darjeeling)-[*]-(Sandakphu))
 WHERE ALL (pw IN relationships(p) WHERE pw.winter = 'true')
 RETURN p
 
-//ok
+3)
+
+MATCH p=(start:town{name:'Darjeeling'})-[*]->(end:peak{name:'Sandakphu'})
+WITH p, reduce(
+  cost=0, x IN relationships(p) | cost + x.distance
+) as cost
+RETURN p, cost
+ORDER BY cost ASC
+
+4)
+
+//brak rezultatow?
+
+MATCH (Darjeeling:town {name: 'Darjeeling'} ),
+p = (Darjeeling)-[:twowheeler]-(destination)
+WHERE ALL(rel IN relationships(p) WHERE rel.summer = 'true')
+RETURN p
+
+
+5)
+
+MATCH (f:Flight)-[:ORIGIN]->(a:Airport)
+return a, count(a) as cnt
+ORDER BY cnt DESC
+
+6)
+
+MATCH p = (start:Airport { name:"LAX" })<-[r:ORIGIN|DESTINATION*..5]->(end:Airport)
+WITH p, reduce(
+    s = 0, n IN [x IN NODES(p) WHERE 'Flight' IN LABELS(x)] |
+    s + [(n)<-[:ASSIGN]-(ticket) | ticket.price][0]
+) as cost
+WHERE cost < 3000
+return p, cost
+ORDER BY cost desc
+
+7)
+// jedno polaczenie?
+MATCH p=(start:Airport { name:"LAX" })-[:ORIGIN]->(f:Flight)<-[:DESTINATION]-(end:Airport { name:"DAY" })
+WITH p, reduce(
+    s = 0, n IN [x IN NODES(p) WHERE 'Flight' IN LABELS(x)] |
+    s + [(n)<-[:ASSIGN]-(ticket) | ticket.price][0]
+) as cost
+WHERE cost < 3000
+return p, cost
+ORDER BY cost desc
+
+//wiele?
+
+MATCH p = (start:Airport { name:"LAX" })<-[r:ORIGIN|DESTINATION*..8]->(end:Airport { name:"DAY" }
+WITH p, reduce(
+    s = 0, n IN [x IN NODES(p) WHERE 'Flight' IN LABELS(x)] |
+    s + [(n)<-[:ASSIGN]-(ticket) | ticket.price][0]
+) as cost
+return p, cost
+ORDER BY cost desc
+
+//jest puste rozwiazanie
+//pomocnicze relacje - origin > destination
+//wykorzystanie w glownym zapytaniu

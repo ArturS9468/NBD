@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8+xkWvp+jOGUikM2UwZTImMfKELRR6xZfFgA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s9468>; rel="up"
+Last-Modified: Tue, 01 Jun 2021 13:25:38 GMT
+ETag: "YlUJ6Od0Y4tl3l2dAtRrc"
+Date: Tue, 01 Jun 2021 13:26:44 GMT
+Content-Type: application/json
+Content-Length: 21
+
+{"name": "mcdonalds"}

@@ -1,0 +1,6 @@
+Character Character{name='Gandalf', clazz='Wizard', race='Aiar', age=11000} has been fetched from location: Gandalf
+Changing character age to 5000
+Success status of an update is: true
+Updated Character Character{name='Gandalf', clazz='Wizard', race='Aiar', age=5000} has been fetched from location: Gandalf
+Deleting character Gandalf!
+Error during fetching deleted character

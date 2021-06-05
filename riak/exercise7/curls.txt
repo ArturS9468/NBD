@@ -1,0 +1,27 @@
+1.1) curl -i –XPUT -H "Content-Type: application/json" -d '{"name": "Gandalf", "race": "Maia", "class": "Wizard", "age":11000}'  http://4cf350bc9ffe:8098/buckets/s9468/keys/Gandalf
+1.2) curl -i –XPUT -H "Content-Type: application/json" -d '{"name": "Frodo", "race": "Hobbit", "class": "Thief", "age":33}'  http://4cf350bc9ffe:8098/buckets/s9468/keys/Frodo
+1.3) curl -i –XPUT -H "Content-Type: application/json" -d '{"name": "Elrond", "race": "Elf", "class": "Lord", "age":6000}'  http://4cf350bc9ffe:8098/buckets/s9468/keys/Elrond
+1.4) curl -i –XPUT -H "Content-Type: application/json" -d '{"name": "Sauron", "race": "Maia", "class": "Enemy", "age":54960}'  http://4cf350bc9ffe:8098/buckets/s9468/keys/Sauron
+1.5) curl -i –XPUT -H "Content-Type: application/json" -d '{"name": "Gimli", "race": "Dwarf", "class": "Warrior", "age":139}'  http://4cf350bc9ffe:8098/buckets/s9468/keys/Gimli
+
+2) curl -i http://4cf350bc9ffe:8098/buckets/s9468/keys/Gandalf
+
+//dodanie plci
+3) curl -i –XPUT -H "Content-Type: application/json" -d '{"name": "Frodo", "race": "Hobbit", "class": "Thief", "age":33, "sex":"male"}'  http://4cf350bc9ffe:8098/buckets/s9468/keys/Frodo
+
+//usuniecie plci
+4) curl -i –XPUT -H "Content-Type: application/json" -d '{"name": "Frodo", "race": "Hobbit", "class": "Thief", "age":33}'  http://4cf350bc9ffe:8098/buckets/s9468/keys/Frodo
+
+//zmiana wieku
+
+5) curl -i –XPUT -H "Content-Type: application/json" -d '{"name": "Frodo", "race": "Hobbit", "class": "Thief", "age":55}'  http://4cf350bc9ffe:8098/buckets/s9468/keys/Frodo
+
+6) curl -i -XDELETE http://4cf350bc9ffe:8098/buckets/s9468/keys/Frodo
+
+7) curl -i http://4cf350bc9ffe:8098/buckets/s9468/keys/Frodo
+
+8) curl -i -XPOST -H "Content-Type: application/json" -d '{"name": "mcdonalds"}' http://4cf350bc9ffe:8098/buckets/s9468/keys
+
+9) curl -i http://4cf350bc9ffe:8098/buckets/s9468/keys/LpokQwdFy8OHpUMJsfV8jpf6jgF
+
+10) curl -i -XDELETE http://4cf350bc9ffe:8098/buckets/s9468/keys/LpokQwdFy8OHpUMJsfV8jpf6jgF

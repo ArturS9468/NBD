@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8+xkWvp8jn7MFIpTIlMfKULZK6xZfFgA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s9468>; rel="up"
+Last-Modified: Tue, 01 Jun 2021 12:56:22 GMT
+ETag: "1mFg9QGOyjP93FHzlu0Cke"
+Date: Tue, 01 Jun 2021 13:04:17 GMT
+Content-Type: application/json
+Content-Length: 67
+
+{"name": "Gandalf", "race": "Maia", "class": "Wizard", "age":11000}
