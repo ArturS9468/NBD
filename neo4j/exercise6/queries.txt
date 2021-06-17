@@ -11,7 +11,7 @@ p = shortestPath((Darjeeling)-[*]-(Sandakphu))
 WHERE ALL (pw IN relationships(p) WHERE pw.winter = 'true')
 RETURN p
 
-3)
+3a)
 
 MATCH p=(start:town{name:'Darjeeling'})-[*]->(end:peak{name:'Sandakphu'})
 WITH p, reduce(
@@ -20,54 +20,89 @@ WITH p, reduce(
 RETURN p, cost
 ORDER BY cost ASC
 
-4)
-
-//brak rezultatow?
+3b) pusta lista
 
 MATCH (Darjeeling:town {name: 'Darjeeling'} ),
 p = (Darjeeling)-[:twowheeler]-(destination)
 WHERE ALL(rel IN relationships(p) WHERE rel.summer = 'true')
 RETURN p
 
-
-5)
+4)
 
 MATCH (f:Flight)-[:ORIGIN]->(a:Airport)
 return a, count(a) as cnt
 ORDER BY cnt DESC
 
-6)
+5)
 
-MATCH p = (start:Airport { name:"LAX" })<-[r:ORIGIN|DESTINATION*..5]->(end:Airport)
-WITH p, reduce(
-    s = 0, n IN [x IN NODES(p) WHERE 'Flight' IN LABELS(x)] |
+MATCH p = (start:Airport { name:"LAX" })<-[r:ORIGIN|DESTINATION*..5]->(dest:Airport)
+WITH dest, relationships(p) as rels, nodes(p) as nodes, reduce(
+    s = 0, n IN [x IN nodes(p) WHERE 'Flight' IN LABELS(x)] |
     s + [(n)<-[:ASSIGN]-(ticket) | ticket.price][0]
 ) as cost
-WHERE cost < 3000
-return p, cost
-ORDER BY cost desc
+WHERE ALL(idx in range(0,size(rels)-1,2) WHERE type(rels[idx]) = 'ORIGIN')
+AND ALL(idx in range(1,size(rels)-1,2) WHERE type(rels[idx]) = 'DESTINATION')
+AND ALL(idx in range(1,size(nodes)-1,2) WHERE (idx%4 <> 1 OR (idx + 2) > LENGTH(p) OR (apoc.date.parse(nodes[idx].date,'m','MM/dd/yyyy hh:mm:ss') + nodes[idx].duration + 30) < apoc.date.parse(nodes[idx+2].date,'m','MM/dd/yyyy hh:mm:ss')))
+AND cost < 3000
+return dest
 
-7)
-// jedno polaczenie?
-MATCH p=(start:Airport { name:"LAX" })-[:ORIGIN]->(f:Flight)<-[:DESTINATION]-(end:Airport { name:"DAY" })
-WITH p, reduce(
-    s = 0, n IN [x IN NODES(p) WHERE 'Flight' IN LABELS(x)] |
+6) pusta lista
+
+MATCH p = (start:Airport { name:"LAX" })<-[r:ORIGIN|DESTINATION*..6]->(dest:Airport { name:"DAY" })
+WITH relationships(p) as rels, nodes(p) as nodes, reduce(
+    s = 0, n IN [x IN nodes(p) WHERE 'Flight' IN LABELS(x)] |
     s + [(n)<-[:ASSIGN]-(ticket) | ticket.price][0]
 ) as cost
-WHERE cost < 3000
-return p, cost
-ORDER BY cost desc
+WHERE ALL(idx in range(0,size(rels)-1,2) WHERE type(rels[idx]) = 'ORIGIN')
+AND ALL(idx in range(1,size(rels)-1,2) WHERE type(rels[idx]) = 'DESTINATION')
+AND ALL(idx in range(1,size(nodes)-1,2) WHERE (idx%4 <> 1 OR (idx + 2) > LENGTH(p) OR (apoc.date.parse(nodes[idx].date,'m','MM/dd/yyyy hh:mm:ss') + nodes[idx].duration + 30) < apoc.date.parse(nodes[idx+2].date,'m','MM/dd/yyyy hh:mm:ss')))
+return rels, nodes, cost
+ORDER BY cost asc
 
-//wiele?
+7) pusta lista
 
-MATCH p = (start:Airport { name:"LAX" })<-[r:ORIGIN|DESTINATION*..8]->(end:Airport { name:"DAY" }
-WITH p, reduce(
-    s = 0, n IN [x IN NODES(p) WHERE 'Flight' IN LABELS(x)] |
+MATCH p = (start:Airport { name:"LAX" })<-[r:ORIGIN|DESTINATION*..6]->(dest:Airport { name:"DAY" })
+WITH relationships(p) as rels, nodes(p) as nodes, reduce(
+    s = 0, n IN [x IN nodes(p) WHERE 'Flight' IN LABELS(x)] |
     s + [(n)<-[:ASSIGN]-(ticket) | ticket.price][0]
 ) as cost
-return p, cost
-ORDER BY cost desc
+WHERE ALL(idx in range(0,size(rels)-1,2) WHERE type(rels[idx]) = 'ORIGIN')
+AND ALL(idx in range(1,size(rels)-1,2) WHERE type(rels[idx]) = 'DESTINATION')
+AND ALL(idx in range(1,size(nodes)-1,2) WHERE (idx%4 <> 1 OR (idx + 2) > LENGTH(p) OR (apoc.date.parse(nodes[idx].date,'m','MM/dd/yyyy hh:mm:ss') + nodes[idx].duration + 30) < apoc.date.parse(nodes[idx+2].date,'m','MM/dd/yyyy hh:mm:ss')))
+return rels, nodes, cost
+ORDER BY cost asc
+LIMIT 1
 
-//jest puste rozwiazanie
-//pomocnicze relacje - origin > destination
-//wykorzystanie w glownym zapytaniu
+8) pusta lista
+
+MATCH p = (start:Airport { name:"LAX" })<-[r:ORIGIN|DESTINATION*..6]->(dest:Airport { name:"DAY" })
+WITH relationships(p) as rels, nodes(p) as nodes, reduce(
+    s = 0, n IN [x IN nodes(p) WHERE 'Flight' IN LABELS(x)] |
+    s + [(n)<-[:ASSIGN]-(tick:Ticket{class:"business"}) | tick.price][0]
+) as cost
+WHERE ALL(idx in range(0,size(rels)-1,2) WHERE type(rels[idx]) = 'ORIGIN')
+AND ALL(idx in range(1,size(rels)-1,2) WHERE type(rels[idx]) = 'DESTINATION')
+AND ALL(idx in range(1,size(nodes)-1,2) WHERE (idx%4 <> 1 OR (idx + 2) > LENGTH(p) OR (apoc.date.parse(nodes[idx].date,'m','MM/dd/yyyy hh:mm:ss') + nodes[idx].duration + 30) < apoc.date.parse(nodes[idx+2].date,'m','MM/dd/yyyy hh:mm:ss')))
+return rels, nodes, cost
+ORDER BY cost asc
+LIMIT 1
+
+9)
+MATCH (a1:Airport)-[:ORIGIN]-(f1:Flight)-[d:DESTINATION]-(a2:Airport)
+RETURN f1.airline as nazwa_linii, count(distinct a1.name+a2.name) as liczba_unikalnych_polaczen
+order by f1.airline asc;
+
+10)
+
+MATCH p = (firstAirport:Airport)<-[origin1:ORIGIN]-(flight1:Flight)-[destination1:DESTINATION]->(secondAirport:Airport)<-[origin2:ORIGIN]-(flight2:Flight)-[destination2:DESTINATION]->(thirdAirport:Airport)
+WITH relationships(p) as rels, nodes(p) as nodes, reduce(
+    s = 0, n IN [x IN nodes(p) WHERE 'Flight' IN LABELS(x)] |
+    s + [(n)<-[:ASSIGN]-(ticket) | ticket.price][0]
+) as cost
+WHERE ALL(idx in range(1,size(nodes)-1,2) WHERE (idx%4 <> 1 OR (idx + 2) > LENGTH(p) OR (apoc.date.parse(nodes[idx].date,'m','MM/dd/yyyy hh:mm:ss') + nodes[idx].duration + 30) < apoc.date.parse(nodes[idx+2].date,'m','MM/dd/yyyy hh:mm:ss')))
+AND firstAirport<>secondAirport
+AND firstAirport<>thirdAirport
+AND secondAirport<>thirdAirport
+RETURN nodes, rels, cost
+ORDER BY cost asc
+LIMIT 1
